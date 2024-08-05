@@ -1,0 +1,265 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General styles */
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  background: radial-gradient(circle at center, 
+    rgba(13, 17, 23, 1) 0%,          /* Dark base color */
+    rgba(50, 50, 50, 0.8) 40%,       /* Dark gray */
+    rgba(128, 0, 128, 0.6) 80%,      /* Medium purple */
+    rgba(0, 0, 128, 0.4) 100%        /* Deep blue */
+  );
+}
+
+/* Header styles */
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+}
+
+header nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+header nav ul li a:hover {
+  color: #00bfff;
+}
+
+/* Projects section styles */
+.projects {
+  padding: 50px 0;
+  color: #ffffff;
+}
+
+.projects .container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.projects h1 {
+  font-size: 42px;
+  color: #00bfff;
+  margin-bottom: 40px; /* More space below the heading */
+  padding-left: 20px; /* Space from the left edge */
+  text-align: center; /* Align heading text to the left */
+}
+
+/* Project list styles */
+.project-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid layout */
+  gap: 30px; /* Space between items */
+}
+
+/* Project item styles */
+.project-item {
+  padding: 20px;
+  border: 1px solid #00bfff;
+  border-radius: 8px;
+  background-color: #21252c;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow effect */
+}
+
+.project-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Enhance shadow on hover */
+}
+
+/* Project item heading */
+.project-item h2 {
+  font-size: 28px;
+  color: #00bfff;
+  margin-bottom: 15px;
+}
+
+/* Project item paragraphs */
+.project-item p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 10px; /* Space between paragraphs */
+}
+
+/* Project links styles */
+.project-links {
+  margin-top: 20px;
+}
+
+.project-links .btn {
+  display: inline-block;
+  padding: 12px 24px;
+  margin-right: 10px;
+  background-color: #00bfff;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.project-links .btn:hover {
+  background-color: #0099cc;
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.project-links .btn-outline {
+  background-color: transparent;
+  border: 2px solid #00bfff;
+  color: #00bfff;
+}
+
+.project-links .btn-outline:hover {
+  background-color: #00bfff;
+  color: #ffffff;
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+footer {
+  background-color: #0d1117;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer-content p {
+  margin-top: 30px;
+}
+
+.filter-buttons {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  margin: 0 5px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filter-btn:hover {
+  background-color: #0056b3;
+}
+
+.project-item {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.social-media a {
+  display: inline-block;
+  color: #00bfff;
+  font-size: 1.2rem;
+  border: 2px solid #00bfff;
+  border-radius: 100%;
+  transition: background-color 0.3s, color 0.3s;
+  width: 40px;
+  height: 40px;
+  line-height: 40px; /* Vertically center the icon */
+  text-align: center;
+  margin: 0 10px; /* Adjust the space between the icons */
+}
+
+.social-media a:hover {
+  color: blue;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .projects .container {
+    width: 90%;
+  }
+    header {
+      flex-direction: column;
+    }
+    
+    nav ul {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  .projects h1 {
+    font-size: 32px;
+    padding-left: 0; /* Remove padding on small screens */
+  }
+
+  .project-item h2 {
+    font-size: 24px;
+  }
+
+  .project-item p {
+    font-size: 16px;
+  }
+
+  .project-links .btn {
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects .container {
+    width: 100%;
+  }
+
+  .projects h1 {
+    font-size: 28px;
+  }
+
+  .project-item {
+    padding: 15px;
+  }
+
+  .project-item h2 {
+    font-size: 20px;
+  }
+
+  .project-item p {
+    font-size: 14px;
+  }
+
+  .project-links .btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}

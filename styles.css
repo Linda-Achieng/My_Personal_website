@@ -1,0 +1,324 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* General styles */
+html, body {
+  height: 100%;
+}
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the page-wrapper takes full height of the viewport */
+}
+body {
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  text-align: center;
+  background-size: cover;
+  height: 100vh;
+  background: radial-gradient(circle at center, 
+  rgba(13, 17, 23, 1) 0%,          /* Dark base color */
+  rgba(50, 50, 50, 0.8) 40%,       /* Dark gray */
+  rgba(128, 0, 128, 0.6) 80%,      /* Medium purple */
+  rgba(0, 0, 128, 0.4) 100%       /* Deep blue */
+);
+background-size: 200% 200%;
+animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+0% {
+  background: radial-gradient(circle at center, 
+    rgba(13, 17, 23, 1) 0%, 
+    rgba(0, 102, 204, 0.5) 100%
+  );
+}
+25% {
+  background: radial-gradient(circle at center, 
+    rgba(13, 17, 23, 1) 0%, 
+    rgba(255, 105, 180, 0.5) 100% /* Bright pink */
+  );
+}
+}
+
+
+/* Header styles */
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+header h1 {
+  font-size: 24px;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+nav ul li a:hover {
+  color: #00bfff;
+}
+
+/* Frontpage section styles */
+.Frontpage {
+  padding: 50px 0;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+.Frontpage-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items to the start (top) */
+  flex-wrap: wrap; /* Allows wrapping for smaller screens */
+  margin-top: 80px;
+}
+
+.Frontpage-text {
+  position: relative;
+ display: flex;
+ flex-direction: column;
+ flex: 1;
+ margin-top: 20px;
+ text-align: left;
+
+}
+
+.Frontpage-text h2 {
+  font-size: 42px;
+  margin-bottom: 10px;
+
+}
+
+.Frontpage-text h3 {
+  font-size: 36px;
+  color: #00bfff;
+  margin-bottom: 20px;
+
+}
+
+.Frontpage-text p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  max-width: 750px;
+align-content: center;
+justify-content: center;
+margin-top: 20px;
+}
+
+.button .btn {
+  padding: 10px 20px;
+  background-color: #00bfff;
+  color: #101010;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+.button .btn:hover{
+  color:blue;
+}
+
+
+.Frontpage-image {
+  position: absolute;
+  flex: 1;
+  overflow: hidden;
+  justify-content:left;
+  margin-left: -10px; /* Move the image to the left */
+  position: relative;
+  z-index: 10; /* Higher value to bring it in front */
+
+}
+
+.Frontpage-image img {
+  max-width: 500px;
+  clip-path: ellipse(50% 50% at 50% 50%);
+  transition: all 0.3s ease;
+  height: 500px;
+  border: none;
+  filter: brightness(0.5) contrast(1.2); /* Adjust brightness and contrast */
+  object-fit: cover; /* Ensure the image covers the container */
+  position: relative;
+   z-index: 1; /* Higher value to bring it in front */ 
+   transform: rotate(-40eg) scaleX(-1);
+}
+/* Reveal Animation */
+
+.Frontpage-image img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+.Frontpage img:hover {
+  opacity: 1;
+  filter: brightness(0.5);
+}
+footer {
+  background-color: #0d1117;
+  padding: 20px 0;
+  text-align: center;
+}
+/*footer section*/
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.social-media {
+  margin-top: 20px;
+
+}
+
+.social-media a {
+  display: inline-block;
+  color:#00bfff;
+  font-size: 1.2rem;
+  border: 2px solid#00bfff;
+  border-radius: 100%;
+  transition: background-color 0.3s, color 0.3s;
+  width: 40px;
+  height: 40px;
+  line-height: 40px; /* Vertically center the icon */
+  text-align: center;
+  margin: 0 20px; /* Adjust the space between the icons */
+}
+
+.social-media a:hover {
+  color:blue;
+}
+#scroll-to-top {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #282c34; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+}
+
+#scroll-to-top:hover {
+  background-color: #444; /* Add a dark-grey background on hover */
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+  /* Header */
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header h1 {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+
+  /* Frontpage Section */
+  .Frontpage-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .Frontpage-text {
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .Frontpage-text h2 {
+    font-size: 32px;
+  }
+
+  .Frontpage-text h3 {
+    font-size: 28px;
+  }
+
+  .Frontpage-text p {
+    font-size: 16px;
+    max-width: 100%;
+  }
+
+  .button .btn, .button .btn-outline {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .Frontpage-image img {
+    max-width: 100%;
+    height: auto;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Header */
+  header h1 {
+    font-size: 18px;
+  }
+
+  nav ul {
+    gap: 5px;
+  }
+
+  /* Frontpage Section */
+  .Frontpage-text h2 {
+    font-size: 28px;
+  }
+
+  .Frontpage-text h3 {
+    font-size: 24px;
+  }
+
+  .Frontpage-text p {
+    font-size: 14px;
+  }
+
+  .button .btn, .button .btn-outline {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  .Frontpage-image img {
+    max-width: 100%;
+    height: auto;
+  }
+}
